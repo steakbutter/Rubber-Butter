@@ -4,10 +4,24 @@
 }
 .header {
     display: flex;
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+    justify-content: center;
+    padding-bottom: 45px;
+    padding-top: 15px;
+
 }
 .flex-container {
     display: flex;
     flex-direction: column;
+    max-width: 300px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+    
+    
+    
 }
 .textbox {
     height: 100px;
@@ -19,10 +33,12 @@
 img {
     min-height: 400px;
     min-width: 250px;
-    background-color: brown;
+    background-color: rgb(235, 222, 222);
+    margin-right: 40px;
 }
 .flex-container-2 {
     display: flex;
     flex-direction: row;
     justify-content: right;
+    margin-top: -200px;
 }
