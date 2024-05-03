@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Attack</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
 </head>
 <body>
     <header class="header">
         <h1>Cat Attack</h1>
     </header>
-    <div className="column is-one-third">
-        <main class="flex-container">
-            <div class="box">I'm in a box. <br>fhdsjkfhdskfjksdhfkjsdjk <br>ghfdjkghjkfdhgjkdfhgjkdfh <br>fdgsfhjsdgjfdgsfgj</div>
-        
-            <div class="buttons">
-                <button class="button">Button</button>
-                <button class="button">Button</button>
-                <button class="button">Button</button>
-            </div>
-        </main>
-        <aside class="flex-container-2">
-            <img src="" alt="placeholder image">
-        </aside>
+    <div class="column is-centered">
+        <div class="column is-half">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Username Placeholder</p>
+                    <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                      </button>
+                </header>
+                <div class="card-content">
+                    <img src="https://pbs.twimg.com/media/FOzquG2X0AQuSG0?format=jpg&name=medium">
+                    <div class="content">
+                        Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
+                        id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
+                        et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
+                        consectetur purus sit amet fermentum.
+                    </div>
+                    <button class="button">Button</button>
+                </div>
+            </div>  
+        </div>
     </div>
-
     <footer>
         <p>Tiny game developed by:</p>
         <ul>
@@ -35,9 +44,6 @@
             <li> <a href="https://github.com/steakbutter">Carlos</a></li> 
         </ul>
     </footer>
-       
-    
-
     <script src="assets/JS/script.js"></script>
 </body>
 </html>
