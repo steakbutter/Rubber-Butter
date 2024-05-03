@@ -17,25 +17,22 @@ img {
     padding-top: 15px;
 }
 
-
-/* Think about these later */
-.flex-container {
+.centerImage
+{
+    /* A whole class just to center an image... */
     display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    margin-left: 15px;
-    flex-wrap: wrap;   
+    justify-content: center;
+    align-items: center;
+}
+.catPics
+{
+    margin-bottom: 25px;
+    max-height: 600px;
 }
 
-.textbox {
-    height: 100px;
-    width: 200px;
-    margin-bottom: 10px;
-}
-
-.flex-container-2 {
+.modalButton
+{
     display: flex;
-    flex-direction: row;
-    justify-content: right;
-    margin-top: -200px;
+    justify-content: center;
+    align-items: center;
 }
