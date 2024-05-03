@@ -1,11 +1,11 @@
 * {
-    background-color: rgba(103, 236, 214, 0.932);
+    color: black;
+    background-color: white;
     font-family: 'Roboto Mono', sans-serif;
 }
 .header {
     display: flex;
     font-size: 50px;
-    color: black;
     font-weight: bolder;
     text-decoration: underline;
     justify-content: center;
@@ -18,22 +18,16 @@
     flex-direction: column;
     max-width: 300px;
     margin-left: 15px;
-    flex-wrap: wrap;
-    
-    
-    
+    flex-wrap: wrap;   
 }
 .textbox {
     height: 100px;
     width: 200px;
-    background-color: blueviolet;
     margin-bottom: 10px;
-
 }
 img {
     min-height: 400px;
     min-width: 250px;
-    background-color: rgb(235, 222, 222);
     margin-right: 40px;
 }
 .flex-container-2 {
