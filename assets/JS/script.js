@@ -2,7 +2,9 @@ const buttonEl = document.getElementById ('click1');
 const buttonEl2 = document.getElementById ('click2');
 const textStory = document.getElementById ('changeText');
 const imageContainer = document.getElementById ('kitten');
-
+const modalButton = document.getElementById("modalThing");
+const modalCard = document.querySelector(".modal");
+console.log(modalButton)
 function changeContent() {
     textStory.innerHTML = '<div> hello, I changed when you clicked the button </div>';
 }
@@ -26,5 +28,10 @@ function changeImage() {
         console.log(data)
     });
 }
+
+function handleModal(){
+modalCard.setAttribute("class","is-active")
+}
+modalButton.addEventListener("click",handleModal);
 buttonEl.addEventListener('click', changeImage);
 buttonEl2.addEventListener('click', changeImage);
