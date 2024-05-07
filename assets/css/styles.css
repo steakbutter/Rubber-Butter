@@ -17,13 +17,21 @@ img {
     padding-top: 15px;
 }
 
+.lifeCounter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:12px;
+}
+
 .centerImage
 {
-    /* A whole class just to center an image... */
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .catPics
 {
     margin-bottom: 25px;
