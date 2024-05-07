@@ -11,7 +11,8 @@ buttonEl.addEventListener('click', changeContent);
 buttonEl2.addEventListener('click', changeContent);
 
 
-  fetch("http://shibe.online/api/cats?count=[1-100]", 
+function changeImage() {
+    imageContainer.innerHTML = fetch("http://shibe.online/api/cats?count=[1-100]", 
     {
         cache: 'reload'
     })
@@ -24,4 +25,6 @@ buttonEl2.addEventListener('click', changeContent);
         document.getElementById('kitten').src = data;
         console.log(data)
     });
-
+}
+buttonEl.addEventListener('click', changeImage);
+buttonEl2.addEventListener('click', changeImage);
