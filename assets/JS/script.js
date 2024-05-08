@@ -39,7 +39,7 @@ function changeText() {
 }
 
 function changeImage() {
-    imageContainer.innerHTML = fetch("http://shibe.online/api/cats?count=[1-100]", 
+    imageContainer.innerHTML = fetch("https://shibe.online/api/cats?count=[1-100]", 
     {
         cache: 'reload'
     })
