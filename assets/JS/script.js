@@ -5,12 +5,17 @@ const imageContainer = document.getElementById ('kitten');
 const modalButton = document.getElementById("modalThing");
 const modalCard = document.querySelector(".modal");
 console.log(modalButton)
+
+const storyArray = ['a', 'b', 'c', 'd'];
+let storyCount = 0
 function changeContent() {
-    textStory.innerHTML = '<div> hello, I changed when you clicked the button </div>';
+        textStory.textContent = storyArray[storyCount];
+        storyCount++ 
+        console.log(storyCount)
 }
 
-buttonEl.addEventListener('click', changeContent);
-buttonEl2.addEventListener('click', changeContent);
+// buttonEl.addEventListener('click', changeContent);
+// buttonEl2.addEventListener('click', changeContent);
 
 
 function changeImage() {
@@ -28,10 +33,14 @@ function changeImage() {
         console.log(data)
     });
 }
+function handleButton() {
+changeImage()
+changeContent()
+}
 
 function handleModal(){
 modalCard.setAttribute("class","is-active")
 }
 modalButton.addEventListener("click",handleModal);
-buttonEl.addEventListener('click', changeImage);
-buttonEl2.addEventListener('click', changeImage);
+buttonEl.addEventListener('click', handleButton);
+buttonEl2.addEventListener('click', handleButton);
