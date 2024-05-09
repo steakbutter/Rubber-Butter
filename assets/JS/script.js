@@ -14,8 +14,22 @@ const storyArray = ['a', 'b', 'c', 'd'];
 let storyCount = 0
 
 //Functions
+
+function reloadUsername (){
+    let username=localStorage.getItem("username")
+    let usernameEl = document.querySelector(".card-header-title");
+    if (username){
+        usernameEl.textContent=username;
+    }else{
+        usernameEl.textContent = "Username PlaceHolder"
+    }
+   
+
+}
+
 function changeContent(event) {
     //Calls for the function that lowers life first
+    
     //life = 0;
 
     if (life === 0) {
@@ -23,17 +37,32 @@ function changeContent(event) {
         changeImage()
         return
     }
+    if (storyCount < storyArray.length) {
+        changeText()
+        changeImage()
+        
+        storyCount++
+    }else{
+        let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
+        console.log("The user pick this = ", userChoice)
+        startOver(userChoice);
+    }
 
-    changeText()
-    changeImage()
+
 
 }
 
-function changeText() {
-    if (storyCount < storyArray.length) {
-        textStory.textContent = storyArray[storyCount];
-        storyCount++
+function startOver(choice){
+    console.log("This is choice = ", choice);
+    if(choice === true){
+        storyCount = 0;
+        changeText()
+        changeImage()
     }
+}
+
+function changeText() {
+    textStory.textContent = storyArray[storyCount];
     console.log(storyCount)
 }
 
@@ -111,10 +140,15 @@ saveUsername.addEventListener('click', function (event) {
     const username = document.getElementById('username');
     const userData = username.value
 
-    localStorage.setItem('username', JSON.stringify(userData));
+    localStorage.setItem('username', userData);
+    let usernameEl = document.querySelector(".card-header-title");
+    usernameEl.textContent=userData;
+
 
 })
 
+
+reloadUsername();
 //Add a function that lowers the life
 
 
