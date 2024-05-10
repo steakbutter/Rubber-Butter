@@ -10,7 +10,7 @@ let saveUsername = document.getElementById('submit');
 
 let life = 100;
 
-const storyArray = ['a', 'b', 'c', 'd'];
+const storyArray = ['Oh no! A rare breed of cat is staring at you. He looks hungry and ready to attack.', 'You made it out of the last fight, but as soon as you took a turn in Hoagy’s Alley, a wild cat appeared. She wants to take your eyes out.', 'Somehow you are still alive, but just as you killed the last creature of evil, his cousin startled you and started chewing on your leg.', 'You made it! you saved Mexicat city by reaching into the government’s secret hideout and activating the nuke that will destroy every stray cat alive, and possibly every human too.'];
 let storyCount = 0
 
 //Functions
