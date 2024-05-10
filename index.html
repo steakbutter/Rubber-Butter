@@ -16,18 +16,22 @@
         <h1>Cat Quest</h1>
     </header>
     <div class="modalButton">
-        <button id="modalThing" class="button modal-button is-large is-primary">Please press this button first
-            :3</button>
+        <button id="modalThing" class="button modal-button is-primary">Set Username</button>
     </div>
     <div class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Who is playing?</p>
+                <p class="modal-card-title">Welcome!</p>
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-                <input id="username" class="input is-large" type="text" placeholder="Type your username (think of a fun one)" />
+                <input id="username" class="input is-large" type="text"
+                    placeholder="Type your username (think of a fun one)" autocomplete="off" />
+                <div class="content is-centered">
+                    <h1>Random Cat Fact!</h1>
+                    <p id="catFact">Cat</p>
+                </div>
             </section>
             <footer class="modal-card-foot">
                 <div class="buttons">
@@ -54,7 +58,7 @@
                         et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
                         consectetur purus sit amet fermentum.
                     </p>
-                    <button id="click1"  class="button">Button</button>
+                    <button id="click1" class="button">Button</button>
                     <button id="click2" class="button">Button</button>
                 </div>
             </div>

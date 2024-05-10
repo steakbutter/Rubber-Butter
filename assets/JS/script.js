@@ -5,6 +5,7 @@ const textStory = document.getElementById('changeText');
 const imageContainer = document.getElementById('kitten');
 const modalButton = document.getElementById("modalThing");
 const modalCard = document.querySelector(".modal");
+const modalBody = document.querySelector(".modal-card-body")
 let saveUsername = document.getElementById('submit');
 
 let life = 100;
@@ -45,7 +46,6 @@ function changeContent(event) {
         console.log("The user picked this = ", userChoice)
         startOver(userChoice);
     }
-
 }
 
 function startOver(choice) {
@@ -78,8 +78,22 @@ function changeImage() {
         });
 }
 
-function handleModal() {
-    modalCard.classList.add("is-active")
+function catFacts() {
+    fetch("https://meowfacts.herokuapp.com/")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            document.getElementById('catFact').textContent = data.data;
+
+            console.log(data);
+        });
+}
+
+
+function openModal() {
+    modalCard.classList.add("is-active");
+    catFacts();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add a click event on buttons to open a specific modal
     (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
         const modal = $trigger.dataset.target;
-        const $target = document.getElementById(modal);
+        const $target = document.querySelectorAll('.modal');
 
         $trigger.addEventListener('click', () => {
             openModal($target);
@@ -139,6 +153,6 @@ reloadUsername();
 
 
 //Buttons and Event Listeners
-modalButton.addEventListener("click", handleModal);
+modalButton.addEventListener("click", openModal);
 buttonEl.addEventListener('click', changeContent);
 buttonEl2.addEventListener('click', changeContent);
