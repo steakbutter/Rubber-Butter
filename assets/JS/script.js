@@ -10,7 +10,10 @@ let saveUsername = document.getElementById('submit');
 
 let life = 100;
 
-const storyArray = ['Oh no! A rare breed of cat is staring at you. He looks hungry and ready to attack.', 'You made it out of the last fight, but as soon as you took a turn in Hoagy’s Alley, a wild cat appeared. She wants to take your eyes out.', 'Somehow you are still alive, but just as you killed the last creature of evil, his cousin startled you and started chewing on your leg.', 'You made it! you saved Mexicat city by reaching into the government’s secret hideout and activating the nuke that will destroy every stray cat alive, and possibly every human too.'];
+const storyArray = ['Oh no! A rare breed of cat is staring at you. He looks hungry and ready to attack.', 
+                    'You made it out of the last fight, but as soon as you took a turn in Hoagy’s Alley, a wild cat appeared. She wants to take your eyes out.', 
+                    'Somehow you are still alive, but just as you killed the last creature of evil, his cousin startled you and started chewing on your leg.', 
+                    'You made it! you saved Mexicat city by reaching into the government’s secret hideout and activating the nuke that will destroy every stray cat alive, and possibly every human too.'];
 let storyCount = 0
 
 //Functions
@@ -18,12 +21,14 @@ let storyCount = 0
 function reloadUsername() {
     let username = localStorage.getItem("username")
     let usernameEl = document.querySelector(".card-header-title");
-
+    
     if (username) {
         usernameEl.textContent = username;
     } else {
-        usernameEl.textContent = "Username PlaceHolder"
+        usernameEl.textContent = "Username Placeholder"
     }
+
+    textStory.innerText = textStory.innerText.replace("username", username)
 }
 
 function changeContent(event) {
@@ -42,11 +47,15 @@ function changeContent(event) {
         changeImage()
 
     } else {
-        let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
-        console.log("The user picked this = ", userChoice)
+        
+        //----------------------WE CANT HAVE A PROMTP, SOMEONE REMEMBER TO REPLACE THIS---------------------------------------
+
+        // let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
+        // console.log("The user picked this = ", userChoice)
         startOver(userChoice);
     }
 }
+
 
 function startOver(choice) {
     console.log(choice);
@@ -141,10 +150,13 @@ saveUsername.addEventListener('click', function (event) {
     event.preventDefault()
     const username = document.getElementById('username');
     const userData = username.value
+    let pastUser = localStorage.getItem('username')
 
     localStorage.setItem('username', userData);
     let usernameEl = document.querySelector(".card-header-title");
     usernameEl.textContent = userData;
+    
+    textStory.innerText = textStory.innerText.replace(pastUser, userData);
 })
 
 reloadUsername();
