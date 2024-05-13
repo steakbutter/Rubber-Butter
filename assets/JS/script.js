@@ -48,7 +48,7 @@ function changeContent(event) {
 
     } else {
         
-        //----------------------WE CANT HAVE A PROMTP, SOMEONE REMEMBER TO REPLACE THIS---------------------------------------
+        
 
         // let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
         // console.log("The user picked this = ", userChoice)
@@ -86,6 +86,7 @@ function changeImage() {
             console.log(data)
         });
 }
+
 
 function catFacts() {
     fetch("https://meowfacts.herokuapp.com/")
@@ -162,9 +163,22 @@ saveUsername.addEventListener('click', function (event) {
 reloadUsername();
 
 //Add a function that lowers the life
+function lifeMod() {
+
+    let randomHit = Math.floor(Math.random(1) * 40);
+    console.log(randomHit);
+    let userLife = life - randomHit;
+    console.log(userLife);
+    let health = document.querySelector(".lifeCounter");
+    health.textContent = userLife;
+   
+}
+ 
 
 
 //Buttons and Event Listeners
 modalButton.addEventListener("click", openModal);
 buttonEl.addEventListener('click', changeContent);
 buttonEl2.addEventListener('click', changeContent);
+buttonEl.addEventListener('click', lifeMod);
+buttonEl2.addEventListener('click', lifeMod);

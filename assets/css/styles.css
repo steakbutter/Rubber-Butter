@@ -24,6 +24,13 @@ img {
     align-items: center;
     margin:12px;
 }
+.healthText
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:12px;
+}
 
 .centerImage
 {
