@@ -10,10 +10,10 @@ let saveUsername = document.getElementById('submit');
 
 let life = 100;
 
-const storyArray = ['Oh no! A rare breed of cat is staring at you. He looks hungry and ready to attack.', 
-                    'You made it out of the last fight, but as soon as you took a turn in Hoagy’s Alley, a wild cat appeared. She wants to take your eyes out.', 
-                    'Somehow you are still alive, but just as you killed the last creature of evil, his cousin startled you and started chewing on your leg.', 
-                    'You made it! you saved Mexicat city by reaching into the government’s secret hideout and activating the nuke that will destroy every stray cat alive, and possibly every human too.'];
+const storyArray = ['Oh no! A rare breed of cat is staring at you. He looks hungry and ready to attack.',
+    'You made it out of the last fight, but as soon as you took a turn in Hoagy’s Alley, a wild cat appeared. She wants to take your eyes out.',
+    'Somehow you are still alive, but just as you killed the last creature of evil, his cousin startled you and started chewing on your leg.',
+    'You made it! you saved Mexicat city by reaching into the government’s secret hideout and activating the nuke that will destroy every stray cat alive, and possibly every human too.'];
 let storyCount = 0
 
 //Functions
@@ -21,43 +21,29 @@ let storyCount = 0
 function reloadUsername() {
     let username = localStorage.getItem("username")
     let usernameEl = document.querySelector(".card-header-title");
-    
+
     if (username) {
         usernameEl.textContent = username;
     } else {
-        usernameEl.textContent = "Username Placeholder"
+        usernameEl.textContent = "Username";
     }
 
     textStory.innerText = textStory.innerText.replace("username", username)
 }
 
 function changeContent() {
-    //Calls for the function that lowers life first
-
-    //life = 0;
-
-    if (storyCount >= storyArray.length) {
-        textStory.textContent = "Game Over Please refresh to restart";
-        startOver();
-        return;
-    } else {
-        changeText()
-        changeImage()
-        // let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
-        // console.log("The user picked this = ", userChoice)
-        
+    if (life > 0) {
+        lifeMod();
+        if (storyCount >= storyArray.length || life === 0) {
+            textStory.textContent = "Game Over, please refresh to start over";
+            buttonEl.disabled = true;
+            buttonEl2.disabled = true;
+        } else {
+            changeText();
+            changeImage();
+        }
     }
-}
 
-
-function startOver() {
-    //console.log(choice);
-    if (life <=  0) {
-        storyCount = 0;
-        changeText()
-        changeImage()
-        life = 100;
-    }
 }
 
 function changeText() {
@@ -150,7 +136,7 @@ saveUsername.addEventListener('click', function (event) {
     localStorage.setItem('username', userData);
     let usernameEl = document.querySelector(".card-header-title");
     usernameEl.textContent = userData;
-    
+
     textStory.innerText = textStory.innerText.replace(pastUser, userData);
 })
 
@@ -160,16 +146,18 @@ reloadUsername();
 function lifeMod() {
 
     let randomHit = Math.floor(Math.random(1) * 40);
-    life -= randomHit
+    life -= randomHit;
+    if (life < 0) {
+        life = 0;
+    }
     let health = document.querySelector(".lifeCounter");
     health.textContent = life;
 };
- 
+
+
 
 
 //Buttons and Event Listeners
 modalButton.addEventListener("click", openModal);
 buttonEl.addEventListener('click', changeContent);
 buttonEl2.addEventListener('click', changeContent);
-buttonEl.addEventListener('click', lifeMod);
-buttonEl2.addEventListener('click', lifeMod);
