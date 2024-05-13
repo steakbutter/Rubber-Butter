@@ -31,38 +31,32 @@ function reloadUsername() {
     textStory.innerText = textStory.innerText.replace("username", username)
 }
 
-function changeContent(event) {
+function changeContent() {
     //Calls for the function that lowers life first
 
     //life = 0;
 
-    if (life === 0) {
-        textStory.textContent = "Game Over Placeholder"
-        changeImage()
-        return
-    }
-
-    if (storyCount < storyArray.length) {
+    if (storyCount >= storyArray.length) {
+        textStory.textContent = "Game Over Please refresh to restart";
+        startOver();
+        return;
+    } else {
         changeText()
         changeImage()
-
-    } else {
-        
-        
-
         // let userChoice = confirm("Do you want to stay here or start over - ok = start over, cancel - to stay")
         // console.log("The user picked this = ", userChoice)
-        startOver(userChoice);
+        
     }
 }
 
 
-function startOver(choice) {
-    console.log(choice);
-    if (choice === true) {
+function startOver() {
+    //console.log(choice);
+    if (life <=  0) {
         storyCount = 0;
         changeText()
         changeImage()
+        life = 100;
     }
 }
 
