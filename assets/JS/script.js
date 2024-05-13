@@ -166,13 +166,10 @@ reloadUsername();
 function lifeMod() {
 
     let randomHit = Math.floor(Math.random(1) * 40);
-    console.log(randomHit);
-    let userLife = life - randomHit;
-    console.log(userLife);
+    life -= randomHit
     let health = document.querySelector(".lifeCounter");
-    health.textContent = userLife;
-   
-}
+    health.textContent = life;
+};
  
 
 
