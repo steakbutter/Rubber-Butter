@@ -2,8 +2,8 @@
 
 ## Description
 
-CatQuest is an HTML mini game where the user is prompt to choose between two options.<br>
-The story will change as the users keeps clicking buttons and taking damage from the cat foes. <br>
+CatQuest is an HTML mini game where the user will battle or try to escape from cat enemies.<br>
+The story will change as the user keeps clicking buttons and taking damage from random cat images. <br>
 This project helped us work as a team to create a webpage from zero using HTML, CSS and JavaScript language. <br>
 We chose to make a mini game to solve boredom while applying HTML, CSS and JavaScript concepts learned in the last 6 weeks.  
 
