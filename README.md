@@ -11,10 +11,10 @@ We chose to make a mini game to solve boredom while applying HTML, CSS and JavaS
 ## Usage
 
 Go to https://steakbutter.github.io/Rubber-Butter/ and type in your username. <br> <br>
-![alt text](assets/username.png) <br> <br>
-![alt text](<assets/type in.png>) <br> <br> 
-Read the story and choose your action by clicking the buttons below the text. 
-![alt text](assets/buttons.png) <br> <br>
+![alt text](assets/images/username.png)  <br> <br>
+ ![alt text](<assets/images/type in.png>) <br> <br> 
+Read the story and choose your action by clicking the buttons below the text. <br> <br>
+ ![alt text](<assets/images/homepage catquest.png>)  <br> <br>
 progress through the story until you reach the last mob or lose all of your hitpoints. 
 
 ## Credits
